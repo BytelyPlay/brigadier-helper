@@ -1,5 +1,6 @@
 plugins {
     id("java-library")
+    id("maven-publish")
 }
 
 group = "org.bytelyplay.brigadierHelpers"
@@ -20,4 +21,21 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+
+            groupId = project.group.toString()
+            artifactId = project.name
+            version = project.version.toString()
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
+}
+java {
+    withSourcesJar()
 }
