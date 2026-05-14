@@ -1,1 +1,1 @@
-This uses JDK 21
+This uses JDK 25
