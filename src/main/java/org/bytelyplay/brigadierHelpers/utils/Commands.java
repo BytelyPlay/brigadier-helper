@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class Commands<T> {
     private final CommandDispatcher<T> dispatcher;
+
     public Commands(CommandDispatcher<T> dispatcher) {
         this.dispatcher=dispatcher;
     }
@@ -16,5 +17,8 @@ public class Commands<T> {
         LiteralArgumentBuilder<T> builder = cmd.build();
 
         dispatcher.register(builder);
+    }
+    public CommandDispatcher<T> getDispatcher() {
+        return dispatcher;
     }
 }

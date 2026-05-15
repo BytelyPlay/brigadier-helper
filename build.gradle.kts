@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "org.bytelyplay.brigadierHelpers"
-version = "1.0.0-BETA"
+version = "1.1.0-BETA"
 
 repositories {
     mavenCentral()
